@@ -1,0 +1,24 @@
+# coding=gbk
+from PIL import Image
+import numpy as np
+# import scipy
+
+
+def loadImage():
+    # ∂¡»°Õº∆¨
+    im = Image.open("D:\\DataForMining\\pic\\1test.jpg")
+
+    # œ‘ æÕº∆¨
+ #   im.show()
+    im = im.convert("L")
+    data = im.getdata()
+    data = np.matrix(data)
+    print(data)
+    # ±‰ªª≥…512*512
+    data = np.reshape(data, (110, 110))
+    print(data)
+    new_im = Image.fromarray(data)
+    # œ‘ æÕº∆¨
+#    new_im.show()
+
+loadImage()
